@@ -47,24 +47,11 @@ services:
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres2024
     ports:
-      - "8080:8080"
+      - "8081:8080"
     depends_on:
       - postgres
     networks:
       - quizapp_network
-
-  # Jenkins service
-#  jenkins:
-#    image: jenkins/jenkins:lts
-#    container_name: quizappdevops-jenkins
-#    ports:
-#      - "8081:8080"
-#      - "50000:50000"
-#    networks:
-#      - quizapp_network
-#    volumes:
-#      - jenkins_home:/var/jenkins_home
-#      - /var/run/docker.sock:/var/run/docker.sock
 
   # SonarQube service
   sonarqube:
